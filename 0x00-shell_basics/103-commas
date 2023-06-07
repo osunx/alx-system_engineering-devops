@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap1 | grep -v "/\.$" | sort -d -k1.1 | awk '{ORS = (NR % 2 == 0 ? ", " : "\n"); print}'
+ls -ap1 | awk 'NR>2{printf(", ")} {if ($0!="./"&&$0!="../") printf("%s%s",$0,(NR>2 ? "" : "\n"))}'
