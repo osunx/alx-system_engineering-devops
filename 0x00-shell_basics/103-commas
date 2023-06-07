@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap1 | awk 'NR>2{printf(", ")} {if ($0!="./"&&$0!="../") printf("%s%s",$0,(NR>2 ? "" : "\n"))}'
+ls -a1 | awk '{print $1}' | sed 's/./\/$&/' | sort -n | uniq | tr '\n' ','
