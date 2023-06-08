@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a1 | awk '{print $1}' | sed -e 's/^/\\//' | sort -n | uniq | tr '\n' ','
+ls -a1 | awk '{print $1}' | sed -e 's/^/\\//' | sort -n
