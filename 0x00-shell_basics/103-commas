@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a1 | awk '{print $1}' | sed 's/./\/$&/' | sort -n | uniq | tr '\n' ','
+ls -ap1 | awk '/^\.\.?$/{printf "./, ../, "; next} /^[A-Za-z0-9]/ {printf "%s%s, ", $0, (/\/$/ ? "" : "/")}; END{printf "\n"}'
