@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap1 | grep -v "^\.$" | grep -v "^\.\.$" | sed -e '1s/^/.\//' -e '2s/^/..//' | paste -sd "," - | sed 's/,/, /g'
+ls -ap1 | grep -v "^\.$" | grep -v "^\.\.$" | sed -e '1s/^/.\//' -e '2s/^/..\/\//' | tr '\n' ',' | sed 's/,$/\n/' | sed 's/, /, /g'
