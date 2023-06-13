@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "obase=bestchol; $((water + stir))" | bc
+echo $(( $(tr a-z 0-9 <<< "$WATER" | tr a-z 0-9) + $(tr a-z 0-9 <<< "$STIR" | tr a-z 0-9) ))
